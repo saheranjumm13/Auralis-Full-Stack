@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Auralis Product Landing Page
 
 A polished, responsive full-stack landing page for **Auralis One**, a fictional premium wireless headphone. The experience keeps the original quiet-luxury direction—ink navy, warm oat, saffron accents, serif display typography—and now includes persistent contact inquiries and managed file attachments.
@@ -57,3 +58,7 @@ The protected `/admin/inbox` route uses the full-stack dashboard layout and requ
 ## Contact-form UX
 
 The public contact form now validates name, email, message length, and attachment type/size as the user interacts with the fields. Attachment preparation shows a progress bar and upload stage, while the submit action uses an animated loading state. Success and error announcements remain accessible via status/alert regions.
+=======
+# Auralis-Full-Stack
+A full-stack responsive product website built with React, TypeScript, Express, tRPC, Drizzle ORM and MySQL.
+>>>>>>> 0b8fa99c6508dbd7a360ef7a6cbdfb994c0aa05d
