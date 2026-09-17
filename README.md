@@ -1,40 +1,81 @@
-<<<<<<< HEAD
-# Auralis Product Landing Page
+# Auralis — Full-Stack Product Website
 
-A polished, responsive full-stack landing page for **Auralis One**, a fictional premium wireless headphone. The experience keeps the original quiet-luxury direction—ink navy, warm oat, saffron accents, serif display typography—and now includes persistent contact inquiries and managed file attachments.
+Auralis is a polished, responsive full-stack web application built with React and TypeScript. It combines a premium product experience with a functional backend for contact inquiries, file attachments, authentication, database persistence, and an admin inbox.
 
-## Full-stack capabilities
+## 🚀 Features
 
-- **Database:** MySQL/TiDB through Drizzle ORM.
-- **Persistence:** The contact form writes `name`, `email`, `message`, status, timestamps, and optional attachment metadata to `contactSubmissions`.
-- **File Storage:** Optional contact attachments are uploaded server-side through `storagePut()` to managed S3-compatible storage. The database stores the returned storage key and URL, never the file bytes.
-- **Authentication:** Manus OAuth and the existing `users` table are enabled by the full-stack template.
-- **Admin access:** `contact.list` is protected by `adminProcedure` for future inbox/dashboard work.
-- **API:** tRPC procedures under `/api/trpc` with typed client bindings.
+* Responsive modern UI
+* React + TypeScript frontend
+* Tailwind CSS styling
+* Express.js backend
+* tRPC API
+* MySQL/TiDB database
+* Drizzle ORM
+* Contact form with validation
+* File attachment uploads
+* Server-side file storage
+* Authentication
+* Protected admin inbox
+* Search, filtering and sorting
+* Form loading, success and error states
 
-## Contact submission flow
+## 🛠️ Tech Stack
 
-The public `contact.submit` mutation validates the form input, accepts optional PNG/JPG/WEBP/PDF/MP3/WAV files up to 5 MB, uploads the file when present, then persists the inquiry and storage reference. The UI shows pending, success, and error states.
+* React
+* TypeScript
+* Tailwind CSS
+* Express.js
+* tRPC
+* Drizzle ORM
+* MySQL/TiDB
+* Vite
+* Node.js
 
-The storage helper returns URLs in the form `/manus-storage/{key}`. Attachments are uploaded from the server so storage credentials never reach the browser.
+## 📂 Project Structure
 
-## Database
+```text
+client/       → Frontend application
+server/       → Backend and API
+drizzle/      → Database schema and migrations
+shared/       → Shared application code
+attached_assets/ → Project assets
+```
 
-Schema source: `drizzle/schema.ts`
+## ⚙️ Installation
 
-- `users` — auth identities and roles.
-- `contactSubmissions` — public inquiries and optional storage metadata.
+Clone the repository:
 
-Migration source: `drizzle/0000_outgoing_baron_strucker.sql`
+```bash
+git clone https://github.com/saheranjumm13/Auralis-Full-Stack.git
+```
 
-## Run locally
+Move into the project:
+
+```bash
+cd Auralis-Full-Stack
+```
+
+Install dependencies:
 
 ```bash
 pnpm install
+```
+
+Create an environment file:
+
+```bash
+.env
+```
+
+Add the required environment variables.
+
+Start the development server:
+
+```bash
 pnpm dev
 ```
 
-Useful checks:
+## 🔍 Useful Commands
 
 ```bash
 pnpm check
@@ -42,23 +83,16 @@ pnpm test
 pnpm build
 ```
 
-The contact form is wired to persistence in the configured WebDev environment. Database and storage credentials are injected by the platform; do not commit `.env` files or hard-code secrets.
+## 🌐 Live Demo
 
-## Admin inbox
+Auralis: https://auralislp-4x2fwwsh.manus.space
 
-The protected `/admin/inbox` route uses the full-stack dashboard layout and requires an authenticated admin user. It provides:
+## 📌 Project Purpose
 
-- Search across name, email, and message content.
-- Status filtering for new, read, and replied inquiries.
-- Sorting by newest, name, or status with ascending/descending direction.
-- Detail view with attachment links and file metadata.
-- Persisted response composer that records an admin reply and marks the inquiry as replied.
-- Mailto shortcuts for opening a direct email reply.
+This project demonstrates full-stack web development, including frontend development, backend API design, database persistence, authentication, file handling, validation, and admin-side data management.
 
-## Contact-form UX
+## 👩‍💻 Author
 
-The public contact form now validates name, email, message length, and attachment type/size as the user interacts with the fields. Attachment preparation shows a progress bar and upload stage, while the submit action uses an animated loading state. Success and error announcements remain accessible via status/alert regions.
-=======
-# Auralis-Full-Stack
-A full-stack responsive product website built with React, TypeScript, Express, tRPC, Drizzle ORM and MySQL.
->>>>>>> 0b8fa99c6508dbd7a360ef7a6cbdfb994c0aa05d
+Saheranjum Makandar
+
+GitHub: https://github.com/saheranjumm13
